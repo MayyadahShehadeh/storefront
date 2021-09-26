@@ -19,7 +19,6 @@ function MediaCard(props) {
         />
       <CardContent>
         <Typography gutterBottom variant="h7" component="div">
-          
          {element.name}
          / ${element.price}
         </Typography>

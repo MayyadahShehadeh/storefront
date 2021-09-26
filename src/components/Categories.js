@@ -19,7 +19,7 @@ const Categories = (props)=> {
         })}
       </Breadcrumbs>
       <p style={{marginLeft:'10%', fontSize:'20px', marginTop:'2%'}}>{props.categoryType.name}</p>
-      <p style={{marginLeft:'10%', fontSize:'20px', color:'GrayText'}}>{props.categoryType.description}</p>
+      <p style={{marginLeft:'10%', fontSize:'20px'}}>{props.categoryType.description}</p>
     </>
   )
 }
