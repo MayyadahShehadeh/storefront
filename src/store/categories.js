@@ -13,7 +13,6 @@ export default function reducer (state = initialState, action) {
     switch (type) {
         case 'CHANGEACTIVE':
             let activeCateg = {};
-
             state.categories.forEach( item => {
                 if (item.name === payload) {
                    return activeCateg = item;

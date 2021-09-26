@@ -4,7 +4,6 @@ export class Footer extends Component {
         return (
             <div>
             <p style={{position: 'fixed',bottom: '0', marginLeft:'47%', width:'100%' }}> &copy; Mayyadah</p>
-
             </div>
         )
     }

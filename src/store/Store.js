@@ -8,4 +8,5 @@ let reducers = combineReducers({ categories: categoryReducer, products: products
 const store = () => {
   return createStore(reducers,composeWithDevTools());
 }
+
 export default store();
