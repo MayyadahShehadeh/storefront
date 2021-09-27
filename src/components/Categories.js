@@ -1,6 +1,5 @@
 import React from 'react';
 import  Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import WhatshotIcon from '@mui/icons-material/Whatshot';
 import Link from '@material-ui/core/Link';
 import { connect } from 'react-redux';
 import { changeActive } from '../store/categories';
