@@ -14,14 +14,5 @@ export default function reducer (state = initialState , action){
       return state;
 
     default: return state;
-
   }
-
 }
-
-export const addToCart = (product)=> {
-    return {
-      type: 'addToCart',
-      payload: product
-    }
-  };

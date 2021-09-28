@@ -14,8 +14,8 @@ export default function reducer (state = initialState, action) {
         case 'CHANGEACTIVE':
             let activeCateg = {};
             state.categories.forEach( item => {
-                if (item.name === payload) {
-                   return activeCateg = item;
+                if (item.category === payload) {
+                    activeCateg = item;
                 }
             });
             return {
@@ -28,9 +28,3 @@ export default function reducer (state = initialState, action) {
 }
 
 
-export const changeActive = (name)=> {
-    return {
-        type: 'CHANGEACTIVE',
-        payload: name
-    }
-}

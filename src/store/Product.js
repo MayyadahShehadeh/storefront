@@ -39,6 +39,12 @@ export default function reducer(state = initialState, action) {
             products: afterAddItem,
             activeProducts: state.activeProducts
         }
+        case 'GET':
+          return {
+              products: payload,
+              activeProducts: state.activeProducts,
+          }
+
       default:
         return state;
     }
@@ -46,15 +52,3 @@ export default function reducer(state = initialState, action) {
   }
   
   
-  export const getItems = (name)=> {
-    return {
-      type: 'CHANGEACTIVE',
-      payload: name
-    }
-  }
-  export const changeCartItems = (product) =>{
-    return {
-        type: 'ChangeCartItems',
-        payload: product
-    }
-}

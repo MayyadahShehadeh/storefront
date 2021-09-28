@@ -4,8 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { connect } from 'react-redux';
-import { getItems,changeCartItems } from '../store/Product';
-import {addToCart} from '../store/Cart'
+import { getItems,changeCartItems,addToCart } from '../store/actions/Actions';
 import Button from '@material-ui/core/Button';
 import {CardActions} from '@material-ui/core';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -25,6 +24,8 @@ function MediaCard(props) {
         component="img"
         height="140"
         image={element.image}
+        title={element.name}
+
         />
       <CardContent>
         <Typography gutterBottom variant="h7" component="div">
