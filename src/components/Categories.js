@@ -2,17 +2,26 @@ import React from 'react';
 import  Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 import { connect } from 'react-redux';
-import { changeActive } from '../store/categories';
-import { getItems } from '../store/Product';
+import { changeActive,getData } from '../store/actions/Actions';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 
 const Categories = (props)=> {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+      dispatch(getData()).then(() => {
+          dispatch(changeActive('Electronics'))
+      })
+  }, [dispatch])
 
   return (
     <>
       <Breadcrumbs aria-label="breadcrumb" style={{marginTop:'15px', marginLeft:'10%', fontSize:'30px'}}>
         {props.categories.map(item => {
-          return <Link color="inherit" onClick={() => { props.changeActive(item.name) }}>
+          return <Link color="inherit" onClick={() => { dispatch(changeActive(item.name)) }}>
           {item.name}</Link>
           
         })}
@@ -27,6 +36,5 @@ const mapStateToProps = (state) => {
   return state.categories;
 }
 
-const mapDispatchToProps = {changeActive,getItems}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Categories);
+export default connect(mapStateToProps)(Categories);
