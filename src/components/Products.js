@@ -18,13 +18,13 @@ function MediaCard(props) {
 }
   return (
       <>
-       {props.products.activeProducts.map(element => {
-      return <Card sx={{ maxWidth: 200 }} style={{display: 'inline-block', marginLeft: '15%', width: '25%', marginTop: '3%' }}>
+       {props.products.activeProducts.map((element , idx) => {
+      return <Card key={idx} sx={{ maxWidth: 200 }} style={{display: 'inline-block', marginLeft: '15%', width: '25%', marginTop: '3%' }}>
       <CardMedia
         component="img"
         height="140"
         image={element.image}
-        title={element.name}
+                title={element.name}
 
         />
       <CardContent>

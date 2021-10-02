@@ -1,8 +1,7 @@
 
 import superagent from 'superagent';
 
-let api ='https://gist.githubusercontent.com/amlcurran/6d174c472e2523be5f9cad7092e1d7ab/raw/edfb73c8ade674f40bfff8f3dfed97d327c1abc1/fruits.json';
-// https://postmanmaster.herokuapp.com/fruit/
+let api ='https://api-server-0.herokuapp.com/products'
 
 export const getData = () => async(dispatch,state) => {
 
@@ -29,17 +28,11 @@ export const addToCart = (product)=> {
   };
 
 
-  export const changeActive = (category)=> {
-    return {
-        type: 'CHANGEACTIVE',
-        payload: category
-    }
-}
 
 
 export const getItems = (name)=> {
     return {
-      type: 'CHANGEACTIVE',
+      type: 'CHANGE_ACTIVE',
       payload: name
     }
   }
