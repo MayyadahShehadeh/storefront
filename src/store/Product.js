@@ -17,7 +17,7 @@ export default function reducer(state = initialState, action) {
     const { type, payload } = action;
   
     switch (type) {
-      case 'CHANGEACTIVE':
+      case 'CHANGE_ACTIVE':
         let activedProd = state.products.filter(item => {
           return item.category === payload
         })

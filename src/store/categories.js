@@ -1,7 +1,7 @@
 const initialState = {
     categories: [
-        { name: 'Food', description: 'Food Section'},
-        { name: 'Electronics', description: 'Electronic Section'}
+        { name: 'food', description: 'Food Section'},
+        { name: 'electronics', description: 'Electronic Section'}
     ],
     categoryType: {},
 }
@@ -14,7 +14,7 @@ export default function reducer (state = initialState, action) {
         case 'CHANGEACTIVE':
             let activeCateg = {};
             state.categories.forEach( item => {
-                if (item.category === payload) {
+                if (item.name === payload) {
                     activeCateg = item;
                 }
             });
@@ -26,5 +26,10 @@ export default function reducer (state = initialState, action) {
             return state;
     }
 }
-
+export const changeActiveCateg = (category)=> {
+    return {
+        type: 'CHANGEACTIVE',
+        payload: category
+    }
+}
 
